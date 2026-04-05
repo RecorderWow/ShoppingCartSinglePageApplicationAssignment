@@ -30,3 +30,8 @@ SETUP GUIDE->
 4. start server with "node server.js" line
 5. start frontend by openning index in the browser.
 
+DATA BASE SCRIPT(IMPORTANT!) -> use this script to create the tables for database
+CREATE TABLE products ( id SERIAL PRIMARY KEY, name VARCHAR(100) NOT NULL, price NUMERIC(10,2) NOT NULL, description TEXT, image_url TEXT );
+
+ CREATE TABLE cart ( id SERIAL PRIMARY KEY, product_id INT REFERENCES products(id) ON DELETE CASCADE, quantity INT DEFAULT 1 );
+
