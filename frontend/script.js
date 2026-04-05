@@ -9,6 +9,7 @@ async function fetchProducts() {
         const div = document.createElement('div');
         div.innerHTML = `
             <h3>${p.name}</h3>
+            <img src="${p.image_url}" alt="${p.name}" width="150" />
             <p>${p.description}</p>
             <p>$${p.price}</p>
             <button onclick="addToCart(${p.id})">Add to Cart</button>
